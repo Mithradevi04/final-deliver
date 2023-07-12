@@ -83,10 +83,15 @@ function OrderForm() {
     }, 30000);
   };
 
-  const isOrderDisabled = !name || !address || !city || !zip || !paymentMethod;
+  const isOrderDisabled = !name ||!phone || !address || !city || !zip || !paymentMethod;
 
   return (
+    <div className='whole-content'>
+      
     <div className="container">
+      
+      
+      
       <form onSubmit={handleSubmit} className="form-container">
         <h2>Delivery Address</h2>
         {/* Delivery address form fields */}
@@ -105,7 +110,7 @@ function OrderForm() {
           id="phone"
           name="phone"
           value={phone}
-          onChange={(event) => setName(event.target.value)}
+          onChange={(event) => setPhone(event.target.value)}
           required
         />
       
@@ -315,9 +320,8 @@ function OrderForm() {
         </div>
         
       )}
-      <div className="back">
-      <button type="submit" className='bact-btn'>Back</button>
-      </div>
+      
+    </div>
     </div>
     
   );
